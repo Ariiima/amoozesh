@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    font-family:'Shabnam', sans-serif;
+   
+}  
+
+h1,h2{
+    font-weight: bold;
+   font-style: bold; 
+}
+p{
+    max-width: 65ch;
+}
+
+
