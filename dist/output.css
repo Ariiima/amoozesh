@@ -1780,6 +1780,11 @@ p{
   background-color: transparent;
 }
 
+.dark .dark\:bg-\[\#3A3A3A\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(58 58 58 / var(--tw-bg-opacity));
+}
+
 .dark .dark\:text-gray-200 {
   --tw-text-opacity: 1;
   color: rgb(229 231 235 / var(--tw-text-opacity));
