@@ -142,11 +142,11 @@
               </li>
             </a>
             <li x-data={show:false} class="space-y-6" :class= " show ? ' border-[1px] border-[#808080] rounded-[30px]' : '' "">
-              <div class="flex items-center justify-between h-[5rem] rounded-[30px] p-5 px-6 py-auto cursor-pointer transition"  @click="show =! show" :class = " show ? '' : 'bg-white dark:bg-[#3A3A3A]' " >
+              <div class="flex items-center justify-between h-[5rem] rounded-[30px] p-5 px-6 py-auto cursor-pointer transition-all"  @click="show =! show" :class = " show ? '' : 'bg-white dark:bg-[#3A3A3A] hover:shadow-lg hover:text-[#FF5E5E]' " >
                 <h2 class="inline-block align-bottom font-bold">تست زیرفصل</h2>
                 <img src="src/arrow.svg" class="w-4 h-4 float-left justify-center transition" :class="{ ' -rotate-180 ': show }">
               </div>
-              <ul x-show="show" class="p-5 pt-0 rounded-[30px] h-auto space-y-6" id="accordian" >
+              <ul x-show="show" class="p-5 pt-0 rounded-[30px] h-auto space-y-6 " id="accordian" >
                   <li class="flex dark:text-[#E5E5E5]"  x-data="{ bar : false }" @mouseover=" bar = true " @mouseout="bar = false">
                     <div class="absolute float-right self-center bg-[#FF5E5E] rounded-[50px] w-3 h-10 transition"
                     :class=" bar && 'scale-y-150' "
