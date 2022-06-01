@@ -1,13 +1,13 @@
     <!DOCTYPE html>
     <html>
-    <head>
+    <head class="scroll-smooth">
     <meta charset="utf-8">
     <script defer src="https://unpkg.com/@alpinejs/persist@3.x.x/dist/cdn.min.js"></script>
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="./dist/output.css" type="text/css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/gh/rastikerdar/shabnam-font@v5.0.0/dist/font-face.css" rel="stylesheet" type="text/css" />  
-
+    <script src="https://cdn.tailwindcss.com"></script>
 
     </head>
     <body  x-data="{toggleActive : $persist(false)} " :class=" toggleActive ? 'dark' : '' " class="overflow-x-clip">
@@ -114,44 +114,66 @@
 
           </div>
           <ul class="flex flex-col justify-center space-y-6 mx-[1rem] dark:text-[#E5E5E5]">
-            <li class="flex dark:text-[#E5E5E5]">
-              <div class="absolute bg-[#FF5E5E] rounded-[50px] w-3 h-16 self-center"></div>
-              <div class="bg-white dark:bg-[#3A3A3A] rounded-[30px] space-y-4 p-5 shadow-lg mr-[6px] w-auto basis-[100%] lg:px-6">
-                <h2>عنوان درس اول</h2>
-                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که...</p></div>
-            </li>
+            <a href="">
+              <li class="flex dark:text-[#E5E5E5]"  x-data="{ bar : false }" @mouseover=" bar = true " @mouseout="bar = false">
+                <div class="absolute bg-[#FF5E5E] rounded-[50px] w-3 h-10 self-center transition"
+                :class=" bar && 'scale-y-150' "
+                      ></div>
+                <div
+                class="bg-white dark:bg-[#3A3A3A] rounded-[30px] space-y-4 p-5 hover:shadow-lg mr-[6px] w-auto basis-[100%] lg:px-6">
+                  <h2 
+                  class="font-bold"
+                  :class = " bar && 'text-[#FF5E5E]'">عنوان درس اول</h2>
+                  <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که...</p></div>
+              </li>
+            </a>
             
-            <li class="flex ">
-              <div class="absolute float-right self-center bg-[#FF5E5E] rounded-[50px] w-3 h-10"></div>
-              <div class="bg-white basis-[100%] rounded-[30px] space-y-4 p-5 mr-[6px] px-6 dark:bg-[#3A3A3A]">
-                <h2>عنوان درس اول</h2>
-                <p >لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که...</p></div>
-            </li>
-            <li class="flex">
-              <div class="absolute float-right self-center bg-[#FF5E5E] rounded-[50px] w-3 h-10"></div>
-              <div class="bg-white basis-[100%] rounded-[30px] space-y-4 p-5 mr-[6px] px-6 dark:bg-[#3A3A3A]">
-                <h2>عنوان درس اول</h2>
-                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که...</p></div>
-            </li>
+            <a href="">
+              <li class="flex dark:text-[#E5E5E5]"  x-data="{ bar : false }" @mouseover=" bar = true " @mouseout="bar = false">
+                <div class="absolute bg-[#FF5E5E] rounded-[50px] w-3 h-10 self-center transition"
+                :class=" bar && 'scale-y-150' "
+                      ></div>
+                <div
+                class="bg-white dark:bg-[#3A3A3A] rounded-[30px] space-y-4 p-5 hover:shadow-lg mr-[6px] w-auto basis-[100%] lg:px-6">
+                  <h2 
+                  class="font-bold"
+                  :class = " bar && 'text-[#FF5E5E]'">عنوان درس اول</h2>
+                  <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که...</p></div>
+              </li>
+            </a>
             <li x-data={show:false} class="space-y-6">
-              <div class="flex items-center justify-between bg-white h-[5rem] rounded-[30px] p-5 px-6 py-auto cursor-pointer dark:bg-[#3A3A3A] "  @click="show=!show">
-                <h2 class="inline-block align-bottom">تست زیرفصل</h2>
+              <div class="flex items-center justify-between bg-white h-[5rem] rounded-[30px] p-5 px-6 py-auto cursor-pointer dark:bg-[#3A3A3A] "  @click="show =! show" x-data="{ scroll: () => { $el.scrollTo(0, $el.scrollHeight); }}" >
+                <h2 class="inline-block align-bottom font-bold">تست زیرفصل</h2>
                 <img src="src/arrow.svg" class="w-4 h-4 float-left justify-center transition" :class="{ ' -rotate-180 ': show }">
               </div>
-              <ul x-show="show" class="p-5 border-[1px] border-[#808080] rounded-[30px] h-auto space-y-6">
-                <h2 class="dark:text-[#E5E5E5] ">زیر فصل تست</h2>
-                <li class="flex">
-                  <div class="absolute float-right self-center bg-[#FF5E5E] rounded-[50px] w-3 h-10 "></div>
-                  <div class="bg-white basis-[100%] rounded-[30px] space-y-4 p-5 mr-[6px] px-6 dark:bg-[#3A3A3A]">
-                    <h2>عنوان درس اول</h2>
-                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که...</p></div>
-                </li>
-                <li class="flex">
-                  <div class="absolute float-right self-center bg-[#FF5E5E] rounded-[50px] w-3 h-10"></div>
-                  <div class="bg-white basis-[100%] rounded-[30px] space-y-4 p-5 mr-[6px] px-6 dark:bg-[#3A3A3A]">
-                    <h2>عنوان درس اول</h2>
-                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که...</p></div>
-                </li>
+              <ul x-show="show" class="p-5 border-[1px] border-[#808080] rounded-[30px] h-auto space-y-6" id="accordian" >
+                <h2 class="dark:text-[#E5E5E5] font-bold">زیر فصل تست</h2>
+
+                  <li class="flex dark:text-[#E5E5E5]"  x-data="{ bar : false }" @mouseover=" bar = true " @mouseout="bar = false">
+                    <div class="absolute float-right self-center bg-[#FF5E5E] rounded-[50px] w-3 h-10 transition"
+                    :class=" bar && 'scale-y-150' "
+                          ></div>
+                    <div
+                    class="bg-white basis-[100%] hover:shadow-lg rounded-[30px] space-y-4 p-5 mr-[6px] px-6 dark:bg-[#3A3A3A]">
+                      <h2
+                      class="font-bold"
+                      :class = " bar && 'text-[#FF5E5E]'">عنوان درس اول</h2>
+                    
+                      <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که...</p></div>
+                  </li>
+
+                  <li class="flex dark:text-[#E5E5E5]"  x-data="{ bar : false }" @mouseover=" bar = true " @mouseout="bar = false">
+                    <div class="absolute float-right self-center bg-[#FF5E5E] rounded-[50px] w-3 h-10 transition"
+                    :class=" bar && 'scale-y-150' "
+                          ></div>
+                    <div
+                    class="bg-white basis-[100%] hover:shadow-lg rounded-[30px] space-y-4 p-5 mr-[6px] px-6 dark:bg-[#3A3A3A]">
+                      <h2
+                      class="font-bold"
+                      :class = " bar && 'text-[#FF5E5E]'">عنوان درس اول</h2>
+                    
+                      <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که...</p></div>
+                  </li>
               </ul>
             </li>
           </ul>
